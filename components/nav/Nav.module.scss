@@ -1,0 +1,15 @@
+.hamburger {
+  stroke-width: 5;
+  stroke: black;
+  // width: 2rem;
+  // height: 2rem;
+
+  path {
+    // transition: d 0.2s;
+    d: path("M 0 10 L 100 10 M 0 40 L 100 40 M 0 70 L 100 70");
+  }
+}
+
+.hamburgerOpen path {
+  d: path("M 6 8 L 94 72 M 100 40 L 100 40 M 6 72 L 94 8.5");
+}
