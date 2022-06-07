@@ -2,15 +2,34 @@ import "tailwindcss/tailwind.css";
 
 export default function Home() {
   return (
-    <>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </>
+    <section className="flex px-8 lg:py-4 justify-between items-center max-w-[1400px] mx-auto">
+      <div className="lg:w-1/2">
+        <h1 className="mb-24 text-8xl">
+          Catalyzing Innovation for People With Autism
+        </h1>
+        <p className="mb-4 text-2xl">
+          Our intention is to impact the lives of people with autism by
+          supporting innovative technologies and surfacing the unmet needs of
+          the community.
+        </p>
+        <p className="mb-4 text-2xl">
+          We are an engine for innovation—a global community of dedicated
+          families, entrepreneurs, funders, and experts collaborating to solve
+          the greatest challenges for people with autism.
+        </p>
+        <p className=" text-2xl">
+          Multiple is a non-profit innovation platform (501c3) for the autism
+          community. Our mission is to transform the lives of people with autism
+          at scale.
+        </p>
+      </div>
+      <img
+        src="/images/home-hero.png"
+        alt="swing set"
+        className="hidden lg:inline-block w-1/3 max-w-lg"
+        // className="hidden lg:inline-block max-w-xl"
+      />
+    </section>
   );
 }
 

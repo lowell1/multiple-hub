@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import { hamburger, hamburgerOpen } from "./Nav.module.scss";
 import Link from "next/link";
-import DonateButton from "../DonateButton";
 
 const navLinks = [
   { text: "Impact", path: "/impact" },
@@ -15,11 +14,12 @@ function MobileNavToggle({ setNavExpanded, navExpanded }) {
   function expandNav() {
     setNavExpanded((navExpanded) => !navExpanded);
   }
+
   return (
-    <button onClick={expandNav}>
+    <button className="h-full" onClick={expandNav}>
       <svg
         viewBox="0 0 100 80"
-        className={`${hamburger} ${navExpanded ? hamburgerOpen : ""} w-full`}
+        className={`${hamburger} ${navExpanded ? hamburgerOpen : ""} h-full`}
       >
         <path className="transition[d] duration-200 linear" />
       </svg>
@@ -28,9 +28,11 @@ function MobileNavToggle({ setNavExpanded, navExpanded }) {
 }
 
 function MobileNavLinks({ navExpanded }) {
+  const opacityTransition = "transition opacity duration-500 linear";
+
   return (
     <div
-      className={`transition opacity duration-500 flex flex-col grow bg-white h-full p-4 ${
+      className={`${opacityTransition} flex flex-col justify-between h-full bg-white pb-8 ${
         navExpanded ? "" : "opacity-0"
       }`}
     >
@@ -39,7 +41,8 @@ function MobileNavLinks({ navExpanded }) {
           <li key={link.path}>
             <Link href={link.path}>
               <a
-                className={`block text-center text-[8vmin] py-3 opacity duration-500 ${
+                // className={`block text-center text-[8vmin] py-3 ${opacityTransition} ${
+                className={`block text-center text-4xl md:text-5xl py-3 ${opacityTransition} ${
                   navExpanded ? "" : "opacity-0"
                 }`}
               >
@@ -49,25 +52,25 @@ function MobileNavLinks({ navExpanded }) {
           </li>
         ))}
       </ul>
-      <button className="self-center bg-black rounded-full text-white px-8 py-4 text-[6vmin]">
+      {/* <button className="self-center bg-black rounded-full text-white px-8 py-4 text-[6vmin]"> */}
+      <button className="self-center bg-black rounded-full text-white px-8 py-4 text-3xl md:text-4xl">
         Donate
       </button>
     </div>
   );
 }
-
 export default function Nav() {
-  const [navExpanded, setNavExpanded] = useState("false");
+  const [navExpanded, setNavExpanded] = useState(false);
 
   return (
     <nav>
-      <div className="flex justify-between items-center h-20 p-4">
+      <div className="flex justify-between items-center h-36 p-8 lg:p-4 lg:h-28 ">
         <img
-          className="h-full"
+          className="max-h-full"
           src="/images/multiple-logo.png"
           alt="Multiple Hub"
         />
-        <ul className="hidden md:inline-block">
+        <ul className="hidden lg:inline-block">
           {navLinks.map((link) => (
             <li className="inline mr-4" key={link.path}>
               <Link href={link.path}>
@@ -75,18 +78,18 @@ export default function Nav() {
               </Link>
             </li>
           ))}
-          <span className="w-32 inline-block">
-            <DonateButton />
-          </span>
+          <button className="bg-black rounded-full text-white px-8 py-4">
+            Donate
+          </button>
         </ul>
-        <span className="w-8 md:hidden">
+        <span className="h-2/5 lg:hidden">
           <MobileNavToggle
             setNavExpanded={setNavExpanded}
             navExpanded={navExpanded}
           />
         </span>
       </div>
-      <div className="h-[calc(100vh-theme(spacing.20))] absolute w-full md:hidden">
+      <div className="h-[calc(100vh-theme(spacing.36))] absolute w-full lg:hidden ">
         <MobileNavLinks navExpanded={navExpanded} />
       </div>
     </nav>
