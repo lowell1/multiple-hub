@@ -53,7 +53,7 @@ function MobileNavLinks({ navExpanded }) {
         ))}
       </ul>
       {/* <button className="self-center bg-black rounded-full text-white px-8 py-4 text-[6vmin]"> */}
-      <button className="self-center bg-black rounded-full text-white px-8 py-4 text-3xl md:text-4xl">
+      <button className="self-center button-primary text-3xl md:text-4xl">
         Donate
       </button>
     </div>
@@ -63,8 +63,8 @@ export default function Nav() {
   const [navExpanded, setNavExpanded] = useState(false);
 
   return (
-    <nav>
-      <div className="flex justify-between items-center h-36 p-8 lg:p-4 lg:h-28 ">
+    <nav class="sticky top-0">
+      <div className="flex justify-between items-center h-28 px-8 py-4 lg:p-4 lg:h-28 bg-white">
         <img
           className="max-h-full"
           src="/images/multiple-logo.png"
@@ -78,9 +78,7 @@ export default function Nav() {
               </Link>
             </li>
           ))}
-          <button className="bg-black rounded-full text-white px-8 py-4">
-            Donate
-          </button>
+          <button className="button-primary">Donate</button>
         </ul>
         <span className="h-2/5 lg:hidden">
           <MobileNavToggle
@@ -89,7 +87,7 @@ export default function Nav() {
           />
         </span>
       </div>
-      <div className="h-[calc(100vh-theme(spacing.36))] absolute w-full lg:hidden ">
+      <div className="h-[calc(100vh-theme(spacing.28))] absolute w-full lg:hidden ">
         <MobileNavLinks navExpanded={navExpanded} />
       </div>
     </nav>

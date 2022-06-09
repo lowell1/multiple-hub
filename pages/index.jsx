@@ -1,35 +1,92 @@
 import "tailwindcss/tailwind.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <section className="flex px-8 lg:py-4 justify-between items-center max-w-[1400px] mx-auto">
-      <div className="lg:w-1/2">
-        <h1 className="mb-24 text-8xl">
-          Catalyzing Innovation for People With Autism
-        </h1>
-        <p className="mb-4 text-2xl">
-          Our intention is to impact the lives of people with autism by
-          supporting innovative technologies and surfacing the unmet needs of
-          the community.
-        </p>
-        <p className="mb-4 text-2xl">
-          We are an engine for innovation—a global community of dedicated
-          families, entrepreneurs, funders, and experts collaborating to solve
-          the greatest challenges for people with autism.
-        </p>
-        <p className=" text-2xl">
-          Multiple is a non-profit innovation platform (501c3) for the autism
-          community. Our mission is to transform the lives of people with autism
-          at scale.
-        </p>
-      </div>
-      <img
-        src="/images/home-hero.png"
-        alt="swing set"
-        className="hidden lg:inline-block w-1/3 max-w-lg"
-        // className="hidden lg:inline-block max-w-xl"
-      />
-    </section>
+    <>
+      <section className="p-4">
+        <div
+          className={`flex flex-col lg:flex-row justify-between items-center px-8 lg:py-4 max-w-1400px mx-auto`}
+        >
+          <div className="lg:w-1/2">
+            <h1 className="mb-8 text-5xl md:text-8xl">
+              Catalyzing Innovation for People With Autism
+            </h1>
+            <p className="mb-8 text-2xl">
+              Our intention is to impact the lives of people with autism by
+              supporting innovative technologies and surfacing the unmet needs
+              of the community.
+            </p>
+            <p className="mb-8 text-2xl">
+              We are an engine for innovation—a global community of dedicated
+              families, entrepreneurs, funders, and experts collaborating to
+              solve the greatest challenges for people with autism.
+            </p>
+            <p className=" text-2xl">
+              Multiple is a non-profit innovation platform (501c3) for the
+              autism community. Our mission is to transform the lives of people
+              with autism at scale.
+            </p>
+            <Link href="">
+              <a className="button-primary mt-8 inline-block">
+                Learn About Our Impact
+              </a>
+            </Link>
+          </div>
+          <img
+            src="/images/home-hero.png"
+            alt="swing set"
+            className="hidden lg:inline-block w-1/3 max-w-lg"
+            // className="hidden lg:inline-block max-w-xl"
+          />
+        </div>
+      </section>
+      <section className="bg-[#c4d462] p-4">
+        <div className="max-w-1400px mx-auto">
+          <div className="lg:w-2/5 pb-16">
+            <h2 className="text-xl pb-8">
+              Tackling Autism’s Greatest Challenges Together
+            </h2>
+            <p className="pb-8">
+              Transformative technologies can help people with autism live great
+              lives, but many innovators are still searching for the resources
+              they need to scale their solutions from idea to impact.
+            </p>
+            <p>
+              Our strategic initiatives are designed to support autism
+              innovation by connecting the community to tackle autism’s greatest
+              challenges together.
+            </p>
+          </div>
+          <div className="pb-16">
+            <h2 className="font-bold pb-8">
+              Innovation Hub for the Autism Community
+            </h2>
+            <p className="pb-8">
+              With the world’s most comprehensive database of autism experts,
+              funders, and community members, we connect innovators with the
+              resources, funding, and contacts that they need to turn their
+              ideas into successful ventures that target the needs of people
+              with autism.
+            </p>
+            <Link href="#">
+              <a className="button-primary">Learn More</a>
+            </Link>
+          </div>
+          <div>
+            <h2 className="font-bold pb-8">Catalyst Programs for Founders</h2>
+            <p className="pb-8">
+              We’re building a wide range of high-quality innovation programs in
+              partnership with leading private and non-profit organizations that
+              are working to support people with autism.
+            </p>
+            <Link href="#">
+              <a className="button-primary inline-block">Learn More</a>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
